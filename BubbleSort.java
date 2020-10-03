@@ -2,23 +2,25 @@
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		int[] myNum = {10, 20, 30, 40};
+		int[] myNum = {10, 50, 20, 40};
 		boolean swap = true;
-		int sizeOfArray = myNum.length, index = 0;
-		while(index < sizeOfArray && swap == true) {
+		int sizeOfNestedLoop = myNum.length-1, index = 0;
+		while(index < myNum.length && swap == true) {
 			swap = false;
-			int nestedIndex = index;
-			while(nestedIndex > 0){
-				if (myNum[index] > myNum[index + 1]) {
-					int tmp = myNum[index];
-					myNum[index] = myNum[index+1];
-					myNum[index+1] = tmp;
-					swap = !swap;
+			int nestedIndex = 0;
+			while(nestedIndex < sizeOfNestedLoop){
+				if (myNum[nestedIndex] > myNum[nestedIndex + 1]) {
+					int tmp = myNum[nestedIndex];
+					myNum[nestedIndex] = myNum[nestedIndex+1];
+					myNum[nestedIndex+1] = tmp;
+					swap = true;
 				}
-				nestedIndex--;
+				nestedIndex++;
 			}
+			index++;
+			sizeOfNestedLoop--;
 		}
-		for (int i = 0; i<sizeOfArray;i++) {
+		for (int i = 0; i < myNum.length; i++) {
 			System.out.print(myNum[i]+ " ");
 		}
 	}
