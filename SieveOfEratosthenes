@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SieveOfEratosthenes {
+	Scanner sc = new Scanner(System.in);
+  int n = sc.nextInt();
+  boolean[] a = new boolean[1_000_005];
+		Arrays.fill(a, true);
+		a[0] = false;
+		a[1] = false;
+		for (int i = 2; i * i < 1_000_005; i++) {
+			if (a[i]) {
+				for (int j = i * i; j < 1_000_005; j += i) {
+					a[j] = false;
+				}
+			}
+		}
+    if(a[n]){
+    System.out.println("PRIME");
+    }else{
+    System.out.println("NOT PRIME");
+    }
+  }
