@@ -4,7 +4,7 @@
  *	If number is multiples of '5' print "Buzz".
  *	If number is multiples of '3' & '5' print "FizzBuzz" instead of the number.
  */
-public class FizzBuzz {
+public class FizzBuzzJava {
 
 	public static void main(String[] args) {
 		int n = 100; 
