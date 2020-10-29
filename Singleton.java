@@ -1,5 +1,5 @@
 public class Singleton {
-    private static Singleton instance;
+    private static volatile Singleton instance; //volatile helps to ensure threads handle Singleton instance correctly
     public static Singleton getInstance() {
         if (instance == null) {
             synchronized (Singleton.class) {
